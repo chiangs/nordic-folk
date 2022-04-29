@@ -14,7 +14,17 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./app/*"]
+      "~public/*": ["./public/*"],
+      "~/*": ["./app/*"],
+      "~constants": ["./app/__constants__/constants.ts"],
+      "~copy/*": ["./app/__copy__/*"],
+      "~types": ["./app/__types__/index.ts"],
+      "~utils": ["./app/__utils__/index.ts"],
+      "~components": ["./app/components/index.ts"],
+      "~contexts": ["./app/contexts/index.ts"],
+      "~hooks": ["./app/hooks/index.ts"],
+      "~routes/*": ["./app/routes/*"],
+      "~styles/*": ["./app/styles/*"]
     },
     "skipLibCheck": true,
 
