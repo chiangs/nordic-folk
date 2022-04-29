@@ -23,6 +23,9 @@ npx create-remix --template chiangs/nordic-folk
 - Linting with [ESLint](https://eslint.org)
 - Static Types with [TypeScript](https://typescriptlang.org)
 - ~~Styling with [Tailwind](https://tailwindcss.com/)~~
+- Web Core Vitals monitoring with [Metronome](https://metronome.sh)
+- Google Analytics 4
+- Path aliases using [alias-hq](https://github.com/davestewart/alias-hq)
 
 Not a fan of bits of the stack? Fork it, change it, and use `npx create-remix --template your/repo`! Make it your own.
 
