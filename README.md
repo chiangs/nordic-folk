@@ -8,6 +8,26 @@ Learn more about [Remix Stacks](https://remix.run/stacks).
 npx create-remix --template chiangs/nordic-folk
 ```
 
+## Table of Contents
+
+- [Remix Nordic Folk Stack](#remix-nordic-folk-stack)
+  - [Table of Contents](#table-of-contents)
+  - [What's in the stack](#whats-in-the-stack)
+  - [Development](#development)
+    - [Relevant code:](#relevant-code)
+  - [Deployment](#deployment)
+    - [Connecting to your database](#connecting-to-your-database)
+    - [Getting Help with Deployment](#getting-help-with-deployment)
+  - [GitHub Actions](#github-actions)
+  - [Testing](#testing)
+    - [Cypress](#cypress)
+    - [Vitest](#vitest)
+    - [Type Checking](#type-checking)
+    - [Linting](#linting)
+    - [Formatting](#formatting)
+    - [Google Analytics](#google-analytics)
+    - [Metronome](#metronome)
+
 ## What's in the stack
 
 - [Fly app deployment](https://fly.io) with [Docker](https://www.docker.com/)
@@ -167,3 +187,39 @@ This project uses ESLint for linting. That is configured in `.eslintrc.js`.
 ### Formatting
 
 We use [Prettier](https://prettier.io/) for auto-formatting in this project. It's recommended to install an editor plugin (like the [VSCode Prettier plugin](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)) to get auto-formatting on save. There's also a `npm run format` script you can run to format all files in the project.
+
+### Google Analytics
+
+The `gtag` util file includes methods to import for page views and other events.
+
+The `root.tsx` loads the main script and the tracker Id is provided as an environment variable via the loader.
+
+It also has an effect after page loads to start tracking page view events.
+
+Don't forget to create the environment variable with the tracker ID: `GA_TRACKING_ID`.
+
+### Metronome
+
+Add the following to `postinstall` script to `the package.json`
+
+```json
+{
+  "postinstall": "remix setup && metronome setup"
+}
+```
+
+Run the setup command
+
+```shell
+npx metronome setup
+```
+
+Add the `postbuild` command
+
+```json
+{
+  "build": "remix build && metronome postbuild"
+}
+```
+
+Don't forget to add your api key to `METRONOME_API_KEY` environment variable

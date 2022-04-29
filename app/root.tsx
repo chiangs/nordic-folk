@@ -35,6 +35,7 @@ type LoaderData = {
 };
 
 export const loader: LoaderFunction = async ({ request }) => {
+  // * Remember to add the env variable for production!
   return json<LoaderData>({
     user: await getUser(request),
     gaTrackingId: process.env.GA_TRACKING_ID,
