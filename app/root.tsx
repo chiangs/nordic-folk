@@ -11,9 +11,13 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
+  useLocation,
 } from "@remix-run/react";
+import { useEffect } from "react";
 
 import { getUser } from "./session.server";
+import { gtag } from "./__utils__";
 
 export const links: LinksFunction = () => {
   return [];
@@ -80,6 +84,7 @@ export default function App() {
       <head>
         <Meta />
         <Links />
+        {gtagScript}
       </head>
       <body className="h-full">
         <Outlet />
