@@ -1,3 +1,6 @@
+// React
+import { useEffect } from "react";
+// Remix
 import type {
   LinksFunction,
   LoaderFunction,
@@ -14,13 +17,29 @@ import {
   useLoaderData,
   useLocation,
 } from "@remix-run/react";
-import { useEffect } from "react";
-
+// Styles
+import normalizeStylesUrl from "~styles/__normalize.css";
+import globalStylesUrl from "~styles/global.css";
+import utilityClassesUrl from "~styles/utils/utils.css";
+// App
 import { getUser } from "./session.server";
-import { gtag } from "./__utils__";
+import { gtag } from "~utils";
 
 export const links: LinksFunction = () => {
-  return [];
+  return [
+    {
+      rel: "stylesheet",
+      href: normalizeStylesUrl,
+    },
+    {
+      rel: "stylesheet",
+      href: globalStylesUrl,
+    },
+    {
+      rel: "stylesheet",
+      href: utilityClassesUrl,
+    },
+  ];
 };
 
 export const meta: MetaFunction = () => ({
