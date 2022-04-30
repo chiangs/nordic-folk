@@ -20,7 +20,7 @@ import {
 // Styles
 import normalizeStylesUrl from "~styles/__normalize.css";
 import globalStylesUrl from "~styles/global.css";
-import utilityClassesUrl from "~styles/utils/utils.css";
+import utilityClassesUrl from "~styles/utils.css";
 // App
 import { getUser } from "./session.server";
 import { gtag } from "~utils";
